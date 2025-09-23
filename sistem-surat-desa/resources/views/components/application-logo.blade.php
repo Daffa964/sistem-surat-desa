@@ -1,0 +1,1 @@
+<img src="https://laravel.com/img/logomark.min.svg" alt="Logo" class="h-9 w-auto">
