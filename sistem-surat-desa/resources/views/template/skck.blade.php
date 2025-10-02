@@ -1,4 +1,4 @@
-@extends('templates.layout')
+@extends('layout')
 
 @section('content')
 <div class="nomor-surat">
@@ -6,8 +6,7 @@
 </div>
 
 <div class="perihal">
-    <p>SURAT KETERANGAN TIDAK MAMPU</p>
-    <p>TENTANG ORANG TUA / WALI</p>
+    <p>SURAT KETERANGAN CATATAN KEPOLISIAN</p>
 </div>
 
 <div class="content">
@@ -59,11 +58,11 @@
         </tr>
     </table>
 
-    <p class="no-indent">Benar nama tersebut di atas adalah penduduk Desa Kemakmuran dan berdasarkan keterangan dari Ketua RT/RW setempat bahwa nama tersebut di atas termasuk keluarga tidak mampu.</p>
+    <p class="no-indent">Bahwa yang namanya tersebut di atas adalah benar-benar penduduk Desa Kemakmuran dan berdasarkan data yang ada di kami serta sepanjang pengetahuan kami sampai dengan saat ini tidak pernah tersangkut perkara atau masalah dengan pihak Kepolisian.</p>
     
     <p class="no-indent">Surat keterangan ini diberikan untuk keperluan : {{ $pengajuan->data_tambahan['keperluan'] ?? '-' }}.</p>
     
-    <p class="no-indent">Demikian Surat Keterangan Tidak Mampu ini dibuat dengan sebenarnya dan untuk dapat dipergunakan sebagaimana mestinya.</p>
+    <p class="no-indent">Demikian Surat Keterangan Catatan Kepolisian ini dibuat dengan sebenarnya dan untuk dapat dipergunakan sebagaimana mestinya.</p>
 </div>
 
 <div class="tanda-tangan">

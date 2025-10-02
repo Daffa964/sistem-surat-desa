@@ -46,24 +46,13 @@ class LetterService
             'nomor_surat' => $this->generateNomorSurat($pengajuan)
         ];
         
-        // Try to load the view directly
-        try {
-            // First try with the templates. prefix
-            $viewPath = 'templates.' . $template;
-            if (view()->exists($viewPath)) {
-                $pdf = Pdf::loadView($viewPath, $data);
-            } else {
-                // If that doesn't work, try without the prefix
-                if (view()->exists($template)) {
-                    $pdf = Pdf::loadView($template, $data);
-                } else {
-                    throw new \Exception("Template view '{$viewPath}' or '{$template}' not found.");
-                }
-            }
-        } catch (\Exception $e) {
-            // If view loading fails, try to create a simple PDF as fallback
-            $pdf = Pdf::loadHtml('<h1>Surat ' . $pengajuan->jenisSurat->nama_surat . '</h1><p>Nomor: ' . $this->generateNomorSurat($pengajuan) . '</p>');
+        // Check if the template view exists
+        if (!view()->exists($template)) {
+            throw new \Exception("Template view '{$template}' not found.");
         }
+        
+        // Generate PDF
+        $pdf = Pdf::loadView($template, $data);
         
         // Save the PDF to storage
         $fileName = 'surat_' . $pengajuan->id . '.pdf';

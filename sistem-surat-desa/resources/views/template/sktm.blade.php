@@ -1,4 +1,4 @@
-@extends('templates.layout')
+@extends('layout')
 
 @section('content')
 <div class="nomor-surat">
@@ -6,7 +6,8 @@
 </div>
 
 <div class="perihal">
-    <p>SURAT KETERANGAN DOMISILI</p>
+    <p>SURAT KETERANGAN TIDAK MAMPU</p>
+    <p>TENTANG ORANG TUA / WALI</p>
 </div>
 
 <div class="content">
@@ -58,11 +59,11 @@
         </tr>
     </table>
 
-    <p class="no-indent">Benar nama tersebut di atas adalah penduduk Desa Kemakmuran dan berdomisili tetap di alamat tersebut di atas.</p>
+    <p class="no-indent">Benar nama tersebut di atas adalah penduduk Desa Kemakmuran dan berdasarkan keterangan dari Ketua RT/RW setempat bahwa nama tersebut di atas termasuk keluarga tidak mampu.</p>
     
     <p class="no-indent">Surat keterangan ini diberikan untuk keperluan : {{ $pengajuan->data_tambahan['keperluan'] ?? '-' }}.</p>
     
-    <p class="no-indent">Demikian Surat Keterangan Domisili ini dibuat dengan sebenarnya dan untuk dapat dipergunakan sebagaimana mestinya.</p>
+    <p class="no-indent">Demikian Surat Keterangan Tidak Mampu ini dibuat dengan sebenarnya dan untuk dapat dipergunakan sebagaimana mestinya.</p>
 </div>
 
 <div class="tanda-tangan">
